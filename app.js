@@ -8,7 +8,19 @@ function agregarAmigo(){
         return null;
     }
     
-    amigos.push(amigo)
+    amigos.push(amigo);
     document.getElementById("amigo").value = "";
-    console.log(amigos)
+    console.log(amigos);
+    listarAmigos();
+}
+
+function listarAmigos(){
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+    for (let index = 0; index < amigos.length; index++) {
+        const li = document.createElement("li");
+        li.textContent = amigos[index];
+        lista.appendChild(li);
+    }
+    console.log(lista);
 }
